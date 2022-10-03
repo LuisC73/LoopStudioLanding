@@ -1,0 +1,78 @@
+@use "../_layout/vars" as vars;
+@use "../_layout/mixins" as mixin;
+
+.header {
+  width: 100vw;
+  background-color: transparent;
+  @include mixin.flex(center, center, row);
+  position: fixed;
+  top: 10%;
+  left: 0;
+}
+
+.navbar {
+  width: 1020px;
+  @include mixin.flex(space-between, center, row);
+  padding: 1rem 0.8rem 0 0.8rem;
+
+  @include mixin.media(){
+    width: 100%;
+  }
+
+  &__ul {
+    @include mixin.flex(space-between, center, row);
+    transition: .4s;
+
+    @include mixin.media(){
+      @include mixin.flex(center, center, column);
+      position: absolute;
+      left: 0;
+      transform: translateX(-100%);
+      width: 100vw;
+      height: 100vh;
+      background-color: vars.$black;
+    }
+  }
+
+  &__logo {
+    width: 11rem;
+  }
+
+  &__li {
+    color: vars.$white;
+    font-size: 1rem;
+    position: relative;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: 1.8rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -0.7rem;
+      left: 25%;
+      width: 0;
+      height: 2px;
+      border-radius: 0.4rem;
+      background: vars.$white;
+      transition: 0.3s;
+    }
+
+    &:hover::before {
+      width: 50%;
+    }
+  }
+
+  &__button{
+    display: none;
+    font-size: 2rem;
+    color: vars.$white;
+    width: fit-content;
+
+    @include mixin.media(){
+      display: block;
+    }
+  }
+}
