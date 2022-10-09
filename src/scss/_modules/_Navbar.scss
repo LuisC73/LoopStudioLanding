@@ -1,22 +1,14 @@
 @use "../_layout/vars" as vars;
 @use "../_layout/mixins" as mixin;
 
-.header {
-  width: 100vw;
-  background-color: transparent;
-  @include mixin.flex(center, center, row);
-  position: fixed;
-  top: 10%;
-  left: 0;
-}
-
 .navbar {
-  width: 1020px;
+  width: 100vw;
   @include mixin.flex(space-between, center, row);
-  padding: 1rem 0.8rem 0 0.8rem;
+  padding: 6rem 11rem;
+  position: relative;
 
   @include mixin.media(){
-    width: 100%;
+    padding: 3rem 1rem;
   }
 
   &__ul {
@@ -36,6 +28,7 @@
 
   &__logo {
     width: 11rem;
+    z-index: 2;
   }
 
   &__li {

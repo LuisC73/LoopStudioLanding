@@ -90,11 +90,11 @@ svg {
 }
 
 body::-webkit-scrollbar {
-  width: 12px;
-  background: vars.$gray;
+  width: 7px;
+  background: vars.$white;
 }
 
 body::-webkit-scrollbar-thumb {
-  background: vars.$gray;
+  background: vars.$violent;
   border-radius: 10px;
 }
