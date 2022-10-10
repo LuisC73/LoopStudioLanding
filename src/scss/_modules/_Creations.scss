@@ -58,6 +58,11 @@
   &__gallery {
     @include mixin.grid(4, 1fr, 2rem);
     margin-top: 4rem;
+    margin-bottom: 8rem;
+
+    @include mixin.media() {
+      margin-bottom: 0;
+    }
   }
 
   &__card {
