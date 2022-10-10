@@ -1,4 +1,5 @@
 import Creations from "../components/Creations";
+import Footer from "../components/Footer";
 import Info from "../components/Info";
 import Landing from "../components/Landing";
 
@@ -8,6 +9,7 @@ function Home() {
       <Landing />
       <Info />
       <Creations />
+      <Footer />
     </section>
   );
 }

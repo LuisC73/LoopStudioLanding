@@ -17,13 +17,19 @@
 
     @include mixin.media(){
       @include mixin.flex(center, center, column);
-      position: absolute;
+      position: fixed;
       left: 0;
+      bottom: 0;
       transform: translateX(-100%);
       width: 100vw;
       height: 100vh;
       background-color: vars.$black;
+      z-index: 9;
     }
+  }
+
+  &__ul--active{
+    transform: translateX(0%);
   }
 
   &__logo {

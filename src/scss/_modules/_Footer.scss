@@ -1,0 +1,73 @@
+@use "../_layout/vars" as vars;
+@use "../_layout/mixins" as mixin;
+
+.footer {
+  background-color: vars.$black;
+  width: 100vw;
+  color: vars.$white;
+  padding: 2rem 11rem;
+
+  @include mixin.media() {
+    padding: 1rem;
+  }
+
+  &__img {
+    width: 8rem;
+  }
+
+  &__top,
+  &__bottom {
+    width: 100%;
+    @include mixin.flex(space-between, center, row);
+
+    @include mixin.media() {
+      @include mixin.flex(center, center, column);
+      row-gap: 1rem;
+    }
+  }
+
+  &__bottom {
+    margin-top: 1rem;
+  }
+
+  &__social {
+    @include mixin.flex(center, center, row);
+  }
+
+  &__icon {
+    font-size: 1.3rem;
+
+    &:not(:first-child) {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &__ul {
+    @include mixin.flex(center, center, row);
+
+    @include mixin.media() {
+      @include mixin.flex(center, center, column);
+    }
+  }
+
+  &__li {
+    font-size: 0.8rem;
+
+    &:not(:first-child) {
+      margin-left: 1.5rem;
+    }
+
+    @include mixin.media() {
+      font-size: 1.2rem;
+
+      &:not(:first-child) {
+        margin-left: 0rem;
+      }
+    }
+  }
+
+  &__p {
+    font-size: 0.8rem;
+    color: vars.$gray;
+  }
+}
