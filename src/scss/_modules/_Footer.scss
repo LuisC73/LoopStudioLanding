@@ -36,6 +36,8 @@
 
   &__icon {
     font-size: 1.3rem;
+    cursor: pointer;
+    position: relative;
 
     &:not(:first-child) {
       margin-left: 0.5rem;
@@ -52,6 +54,8 @@
 
   &__li {
     font-size: 0.8rem;
+    cursor: pointer;
+    position: relative;
 
     &:not(:first-child) {
       margin-left: 1.5rem;
@@ -63,6 +67,22 @@
       &:not(:first-child) {
         margin-left: 0rem;
       }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -0.7rem;
+      left: 25%;
+      width: 0;
+      height: 2px;
+      border-radius: 0.4rem;
+      background: vars.$white;
+      transition: 0.3s;
+    }
+
+    &:hover::before {
+      width: 50%;
     }
   }
 

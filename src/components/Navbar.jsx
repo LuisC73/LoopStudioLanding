@@ -1,5 +1,5 @@
 import images from "../helpers/images";
-import { BiMenu } from "react-icons/bi";
+import { BiMenu, BiX } from "react-icons/bi";
 import { useState } from "react";
 
 function Navbar() {
@@ -12,6 +12,19 @@ function Navbar() {
           <img src={images.logo} alt="Logo" className="navbar__img" />
         </div>
         <ul className={`navbar__ul ${menu ? "navbar__ul--active" : ""}`}>
+          <li className="navbar__top">
+            <ul className="navbar__content">
+              <li>
+                <img src={images.logo} alt="Logo" className="navbar__img" />
+              </li>
+              <li>
+                <BiX
+                  className="navbar__button"
+                  onClick={() => setMenu(!menu)}
+                />
+              </li>
+            </ul>
+          </li>
           <li className="navbar__li">About</li>
           <li className="navbar__li">Careers</li>
           <li className="navbar__li">Events</li>

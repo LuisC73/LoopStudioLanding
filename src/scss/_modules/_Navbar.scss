@@ -7,16 +7,30 @@
   padding: 6rem 11rem;
   position: relative;
 
-  @include mixin.media(){
+  @include mixin.media() {
     padding: 3rem 1rem;
+  }
+
+  &__top {
+    display: none;
+
+    @include mixin.media() {
+      display: block;
+    }
+  }
+
+  &__content {
+    @include mixin.flex(space-between, center, row);
+    width: 80vw;
+    margin-bottom: 8rem;
   }
 
   &__ul {
     @include mixin.flex(space-between, center, row);
-    transition: .4s;
+    transition: 0.4s;
 
-    @include mixin.media(){
-      @include mixin.flex(center, center, column);
+    @include mixin.media() {
+      @include mixin.flex(flex-start, flex-start, column);
       position: fixed;
       left: 0;
       bottom: 0;
@@ -25,10 +39,11 @@
       height: 100vh;
       background-color: vars.$black;
       z-index: 9;
+      padding: 3rem 3rem;
     }
   }
 
-  &__ul--active{
+  &__ul--active {
     transform: translateX(0%);
   }
 
@@ -62,15 +77,26 @@
     &:hover::before {
       width: 50%;
     }
+
+    @include mixin.media() {
+      font-size: 2rem;
+      margin-top: 2rem;
+      text-transform: uppercase;
+      font-family: vars.$font2;
+
+      &:not(:first-child) {
+        margin-left: 0rem;
+      }
+    }
   }
 
-  &__button{
+  &__button {
     display: none;
-    font-size: 2rem;
+    font-size: 3rem;
     color: vars.$white;
     width: fit-content;
 
-    @include mixin.media(){
+    @include mixin.media() {
       display: block;
     }
   }
